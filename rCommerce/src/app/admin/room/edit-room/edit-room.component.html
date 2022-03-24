@@ -1,0 +1,81 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-2 col-sm-12 "></div>
+        <div class="col-md-8 col-sm-12  shadow bg-white rounded" style=" padding: 10px">
+            <h2>Sign Up</h2>
+            <hr />
+
+            <form [formGroup]="addRoomform" (ngSubmit)="onroomedit()">
+                <!-- <div formGroupName="fullName"></div> -->
+                <div class="form-group">
+                    <label for="fname" class="form-label">Address</label>
+                    <input type="text" class="form-control shadow bg-white rounded" placeholder="Enter First Name"
+                        name="First Name" value="{{rooms.address}}" formControlName="address" />
+                    <small *ngIf="
+                        addRoomFormControl['address'].errors?.['required'] && addRoomFormControl['address'].invalid && addRoomFormControl['address'].touched
+                      ">*Invalid firstName</small>
+                </div>
+                <div class="form-group">
+                    <label for="lname" class="form-label">Number Of Room</label>
+                    <input type="text" class="form-control shadow bg-white rounded" placeholder="Enter Last Name"
+                        name="no of room" value="{{rooms.numberOfRoom}}" formControlName="numberOfRoom" />
+                    <small *ngIf="
+                        addRoomFormControl['numberOfRoom'].errors?.['required'] && addRoomFormControl['numberOfRoom'].invalid && addRoomFormControl['numberOfRoom'].touched
+                      ">*Invalid lastName</small>
+                </div>
+                <div class="row container-fluid">
+
+                    <div class="form-group col-lg-5 ">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="number" class="form-control shadow bg-white rounded" value="{{rooms.price}}"
+                            placeholder="Enter price" name="price" formControlName="price" />
+                        <small *ngIf="
+          addRoomFormControl['price'].errors?.['required'] && addRoomFormControl['price'].invalid && addRoomFormControl['price'].touched
+        ">*Invalid price</small>
+                    </div>
+                    <div class="col-lg-2">
+
+                    </div>
+                    <div class="form-group col-lg-5">
+                        <label>Categories:</label><br>
+                        <select name="categories" class="shadow bg-white rounded" value="{{rooms.categories}}"
+                            formControlName="categories">
+                            <option value="premium">Premium</option>
+                            <option value="urgent">Urgent</option>
+                            <option value="normal">Normal</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Insert an Image</label>
+                    <input class="form-control" type="file" id="formFile" (change)="fileUpload($event)">
+                </div>
+
+                <div class="form-group">
+                    <label for="description" class="form-label">Description</label>
+                    <input type="text" class="form-control shadow bg-white rounded" placeholder="Enter Description"
+                        name="description" value="{{rooms.description}}" formControlName="description" />
+                    <small *ngIf="
+                        addRoomFormControl['description'].errors?.['required'] && addRoomFormControl['description'].invalid && addRoomFormControl['description'].touched
+                      ">*Invalid description</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="PhoneNumber" class="form-label">PhoneNumber</label>
+                    <input type="text" class="form-control shadow bg-white rounded" placeholder="Enter PhoneNumber"
+                        name="PhoneNumber" value="{{rooms.phoneNumber}}" formControlName="phoneNumber" />
+                    <small *ngIf="
+                        addRoomFormControl['phoneNumber'].errors?.['required'] && addRoomFormControl['phoneNumber'].invalid && addRoomFormControl['phoneNumber'].touched
+                      ">*Invalid phoneNumber</small>
+                </div>
+
+
+                <button type="submit" [disabled]="addRoomform.invalid" class="btn btn-primary">
+                    Submit
+                </button>
+            </form>
+        </div>
+        <div class="col-md-2 col-sm-12"></div>
+    </div>
+</div>

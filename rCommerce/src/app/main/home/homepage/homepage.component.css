@@ -1,0 +1,64 @@
+.carousel .carousel-item {
+    max-height: 500px;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    max-height: 500px;
+}
+
+/* 
+.product {
+    padding: 20px 0;
+}
+
+.slider-wrap {
+    position: relative;
+}
+
+.slider-main {
+    position: absolute;
+}
+
+.item {
+    display: inline;
+    height: 600px;
+    width: 600px;
+    background-color: darkred;
+}
+
+.text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+} */
+
+
+.myrow {
+    overflow: hidden;
+}
+
+.feedback {
+    border-radius: 50%;
+    background-color: #01a0e4;
+    color: white;
+    padding: 10px 20px;
+    border-color: #ffffff;
+}
+
+.feedback:hover {
+    background-color: darkblue;
+}
+
+#mybutton {
+    position: fixed;
+    bottom: 70px;
+    right: 30px;
+}
+
+
+
+.image {
+    height: 280px;
+    width: 280px;
+}

@@ -1,0 +1,82 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-2 col-sm-12 "></div>
+        <div class="col-md-8 col-sm-12  shadow bg-white rounded" style=" padding: 10px">
+            <h2>Add Room</h2>
+            <hr />
+
+            <form [formGroup]='addRoomform' (ngSubmit)="onRegister()">
+                <!-- <div formGroupName="fullName"></div> -->
+                <div class="form-group">
+                    <label for="address" class="form-label"> Adderss</label>
+                    <input type="text" class="form-control shadow bg-white rounded" placeholder="Enter Address"
+                        name="Address" formControlName="address" />
+                    <small *ngIf="
+                        addRoomFormControl['address'].errors?.['required'] && addRoomFormControl['address'].invalid && addRoomFormControl['address'].touched
+                      ">*Invalid address</small>
+                </div>
+                <div class="form-group">
+                    <label for="No Of Room" class="form-label"> No Of rooms</label>
+                    <input type="text" class="form-control shadow bg-white rounded" placeholder="Enter No Of Room"
+                        name="No Of Room" formControlName="numberOfRoom" />
+                    <small *ngIf="
+                        addRoomFormControl['numberOfRoom'].errors?.['required'] && addRoomFormControl['numberOfRoom'].invalid && addRoomFormControl['numberOfRoom'].touched
+                      ">*Invalid numberOfRoom</small>
+                </div>
+                <div class="row container-fluid">
+
+                    <div class="form-group col-lg-5 ">
+                        <label for="price" class="form-label">Price Per Room</label>
+                        <input type="number" class="form-control shadow bg-white rounded" placeholder="Enter price"
+                            name="price" formControlName="price" />
+                        <small *ngIf="
+          addRoomFormControl['price'].errors?.['required'] && addRoomFormControl['price'].invalid && addRoomFormControl['price'].touched
+        ">*Invalid price</small>
+                    </div>
+                    <div class="col-lg-2">
+
+                    </div>
+                    <div class="form-group col-lg-5">
+                        <label>Categories:</label><br>
+                        <select name="categories" class="shadow bg-white rounded" formControlName="categories">
+                            <option value="premium">Premium</option>
+                            <option value="urgent">Urgent</option>
+                            <option value="normal">Normal</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Insert an Image</label>
+                    <input class="form-control" type="file" id="formFile" (change)="fileUpload($event)">
+                </div>
+
+                <div class="form-group">
+                    <label for="Description" class="form-label">Description About Room</label>
+                    <textarea type="text" class="form-control shadow bg-white rounded" placeholder="Enter Description"
+                        name="Description" formControlName="description"></textarea>
+                    <small *ngIf="
+                        addRoomFormControl['description'].errors?.['required'] && addRoomFormControl['description'].invalid && addRoomFormControl['description'].touched
+                      ">*Invalid Description</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="PhoneNumber" class="form-label">PhoneNumber</label>
+                    <input type="text" class="form-control shadow bg-white rounded" placeholder="Enter PhoneNumber"
+                        name="PhoneNumber" formControlName="phoneNumber" />
+                    <small *ngIf="
+                        addRoomFormControl['phoneNumber'].errors?.['required'] && addRoomFormControl['phoneNumber'].invalid && addRoomFormControl['phoneNumber'].touched
+                      ">*Invalid phoneNumber</small>
+                </div>
+
+
+
+                <button type="submit" [disabled]="addRoomform.invalid" class="btn btn-primary">
+                    Submit
+                </button>
+            </form>
+        </div>
+        <div class="col-md-2 col-sm-12"></div>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+<nav class="navbar navbar-light" style="background-color:rgb(226, 226, 226) ;">
+    <h1 class="navbar-brand" href="#">Rooms List</h1>
+
+
+    <form class="form-inline">
+        <input class="form-control " type="search" placeholder="Search..." aria-label="Search" name="address"
+            [(ngModel)]="address" (ngModelChange)="Search()" style="border-radius: 10px;">
+
+    </form>
+
+
+    <button class="btn btn-outline-primary float-right" (click)="ADDroom()">+ Add Room</button>
+
+</nav>
+
+
+
+<div class="container-fluid pl-5 " *ngIf="loading">
+
+    <div class="row mt-5 pl-5">
+
+        <div class="card mycard mr-3 mt-3" routerLink="/admin/room/roomDetail/{{room._id}}"
+            style="width: 14rem;border-radius: 10%; background-color: rgb(226, 226, 226);"
+            *ngFor="let room of rooms ; let i=index">
+            <div class="text-center">
+                <div *ngIf="room.image[0]">
+                    <img class="card-img-top image-fluid mt-2" style="height:13rem; width: 12rem; border-radius: 10px;"
+                        src="{{imageUrl}}{{room.image[0]}}" alt="no image Uploaded">
+                </div>
+                <div *ngIf="!room.image[0]">
+                    <img class="card-img-top image-fluid mt-2" style="height:13rem; width: 12rem; border-radius: 10px;"
+                        src="./../../../../assets/img/112815904-no-image-available-icon-flat-vector-illustration.webp"
+                        alt="no image Uploaded">
+                </div>
+
+                <div class="card-body">
+                    <div class="col-lg-12 justify-content-inline">
+
+                        <p class="card-title">Adderss : {{room.address}}</p>
+                        <p class="card-title"> {{room.price | currency :"NPR "}}</p>
+
+                    </div>
+                    <!-- <p class="card-text ">{{rooms[0].description}}</p> -->
+                    <div style="border-radius: 10%;">
+                        <button class="btn btn-sm btn-warning mr-2" routerLink="/admin/room/editRoom/{{room._id}}"><i
+                                class="fas fa-edit"></i></button>
+                        <button class="btn btn-sm btn-danger" (click)="deleteUser(room._id,i)"><i
+                                class="fa-solid fa-trash-can"></i></button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

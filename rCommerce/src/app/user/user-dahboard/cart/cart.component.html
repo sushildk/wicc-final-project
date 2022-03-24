@@ -1,0 +1,32 @@
+<nav class="navbar navbar-light bg-light mt-3">
+    <h1 class="navbar-brand" href="#">Cart List</h1>
+    <button class="float-right bg-danger btn mr-3 " style="border-radius: 10px;" (click)="homecart()">CheckOut</button>
+    <!-- <button class="btn btn-outline-primary float-right" ></button> -->
+
+</nav>
+<table class="table " *ngIf="loading">
+
+    <tbody>
+        <tr *ngFor="let room of rooms" class="shadow">
+
+            <td><img src="./../../../../assets/img/download (1).png" class="image-fluid"
+                    style="height: 100px;width: 100px;border:1px solid gray" alt=""></td>
+            <td style="width:600px;">
+                <!--   <h1>admin {{rooms[0].address}}</h1> -->
+
+                <p class="float-left mt-4">{{room.description}}</p>
+            </td>
+            <td>
+                <p class="mt-4">{{room.price}}</p>
+            </td>
+            <td>
+                <p class="mt-4">{{room.address}}</p>
+            </td>
+            <td><button type="button" class="btn-close mt-4" aria-label="Close"
+                    (click)="removeCartRoom(room._id)"></button>
+            </td>
+        </tr>
+
+
+    </tbody>
+</table>

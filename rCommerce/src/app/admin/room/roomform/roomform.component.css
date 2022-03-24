@@ -1,0 +1,24 @@
+.container {
+    padding: 30px;
+}
+
+.form-group {
+    padding: 5px 0;
+
+}
+
+label {
+    font-weight: 700;
+}
+
+input {
+    border: 1px solid gray
+}
+
+.green {
+    color: green;
+}
+
+small {
+    color: red;
+}

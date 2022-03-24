@@ -1,0 +1,327 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+        <!-- offcanvas trigg -->
+        <button class="btn btn-primary mr-2 d-flex" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <!-- offcanvas trigg -->
+        <h2 class="navbar-text text-light fw-bold d-flex">
+            <a routerLink="/user/userDasboard" style="text-decoration: none;"> ROOM </a>
+
+        </h2>
+        <form class="form-inline ml-5">
+            <input class="form-control " type="search" placeholder="Search..." aria-label="Search" name="address"
+                [(ngModel)]="address" (ngModelChange)="Search()" style="border-radius: 10px;">
+
+        </form>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0v"></ul>
+        <li class="nav-item dropdown d-flex">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="fa-solid fa-user"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" routerLink="/user/userDasboard/profile">Profile</a></li>
+                <li><a class="dropdown-item" (click)="LogOut()"> LogOut</a></li>
+                <li>
+                    <hr class="dropdown-divider" />
+                </li>
+            </ul>
+        </li>
+        <!-- </div> -->
+    </div>
+</nav>
+
+<!-- offcanves -->
+
+<div class="offcanvas offcanvas-start bg-dark text-white" style="width: 260px" tabindex="-1" id="offcanvasExample"
+    aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header bg-dark" style="height: 75px">
+        <h2 class="navbar-text m-auto fw-bold text-white" routerlink="/admin/adminDashboard">
+            ROOM
+        </h2>
+
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <nav class="navbar-dark">
+            <ul class="navbar-nav">
+
+                <li>
+                    <a class="text-muted small fw-bold text-uppercase px-3">
+                        Dashboard
+                    </a>
+                </li>
+
+
+                <!-- <li>
+                    <a href="" class="nav-link px-3 active m-2" data-bs-dismiss="offcanvas">
+                        <span class="me-2">
+                            <i class="fa-solid fa-hotel"></i>
+                        </span>
+                        Cart
+                    </a>
+                </li> -->
+                <li class="my-1">
+                    <hr class="dropdown-divider" />
+                </li>
+                <li>
+                    <a href="" class="nav-link px-3 active m-2" data-bs-dismiss="offcanvas">
+                        <span class="me-2">
+                            <i class="far fa-clipboard"></i>
+                        </span>
+                        Book Details
+                    </a>
+                </li>
+                <li class="my-1">
+                    <hr class="dropdown-divider" />
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<!-- offcanves -->
+
+<div class="container ">
+
+
+
+
+    <div class="row mt-5">
+
+        <div class="card mycard  ml-4 mr-4 mb-3"
+            style=" width: 14rem;border-radius: 10%; background-color: rgb(226, 226, 226);" *ngFor="let room of rooms">
+            <div class="text-center">
+                <div *ngIf="room.image[0]">
+                    <img class="card-img-top image-fluid mt-2" style="height:13rem; width: 12rem; border-radius: 10px;"
+                        src="{{imageUrl}}{{room.image[0]}}" alt="Card image cap"
+                        routerLink="/user/userDasboard/roomDetail/{{room._id}}">
+
+                </div>
+                <div *ngIf="!room.image[0]">
+                    <img class="card-img-top image-fluid mt-2" style="height:13rem; width: 12rem; border-radius: 10px;"
+                        src="./../../../../assets/img/112815904-no-image-available-icon-flat-vector-illustration.webp"
+                        alt="Card image cap" routerLink="/user/userDasboard/roomDetail/{{room._id}}">
+
+                </div>
+
+                <div class="card-body">
+                    <div class="col-lg-12 justify-content-inline"
+                        routerLink="/user/userDasboard/roomDetail/{{room._id}}">
+
+                        <p class="card-title">Adderss : {{room.address}}</p>
+                        <p class="card-title"> {{room.price | currency :"NPR "}}</p>
+
+                    </div>
+                    <!-- <p class="card-text ">{{rooms[0].description}}</p> -->
+                    <div style="border-radius: 10%;">
+                        <button class="btn btn-sm btn-primary mr-2" style="border-radius: 10px;"
+                            (click)="addTocart(room)">Add to
+                            Cart</button>
+                        <button class="btn btn-sm btn-info" style="border-radius: 10px;"
+                            (click)="book(room._id)">Book</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class=" mt-5 mb-5 bg-light " *ngIf="urgentLoading" style="border: 2px solid gray; border-radius: 20px;">
+
+        <div>
+            <h2 class="text-center m-2 p-2 " style="background-color:rgb(226, 226, 226) ; border-radius: 10px;"><span
+                    class="text-danger fw-bold">
+                    Urgent</span> Rooms</h2>
+            <hr class="bg-white " style="height: 3px;">
+            <div class="row mt-3  myrow">
+                <owl-carousel-o [options]="customOptions">
+                    <ng-template carouselSlide *ngFor="let ur of urgent">
+                        <div class="card mycard ml-2 mr-2 mb-3"
+                            style="width: 14rem;border-radius: 10%; background-color: rgb(226, 226, 226);">
+                            <!-- *ngFor="let room of normal" -->
+                            <div class="text-center">
+                                <div *ngIf="ur.image[0]">
+                                    <img class="card-img-top image-fluid mt-2 ml-3"
+                                        style="height:13rem; width: 12rem; border-radius: 10px;"
+                                        src="{{imageUrl}}{{ur.image[0]}}" alt="Card image cap">
+
+                                </div>
+                                <div *ngIf="!ur.image[0]">
+                                    <img class="card-img-top image-fluid mt-2 ml-3"
+                                        style="height:13rem; width: 12rem; border-radius: 10px;"
+                                        src="./../../../../assets/img/112815904-no-image-available-icon-flat-vector-illustration.webp"
+                                        alt="Card image cap">
+
+                                </div>
+
+
+                                <div class="card-body">
+                                    <div class="col-lg-12 justify-content-inline">
+
+                                        <p class="card-title">Adderss : {{ur.address}}</p>
+                                        <p class="card-title"> NRP:{{ur.price}}</p>
+
+                                    </div>
+                                    <!-- <p class="card-text ">{{rooms[0].description}}</p> -->
+                                    <div style="border-radius: 10%;">
+                                        <button class="btn btn-sm btn-primary mr-2" style="border-radius: 10px;"
+                                            (click)="addTocart(ur)">Add to
+                                            Cart</button>
+                                        <button class="btn btn-sm btn-info" style="border-radius: 10px;"
+                                            (click)="onAdd()">Book</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+
+                </owl-carousel-o>
+
+                <!-- ******************** -->
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class=" mt-5 mb-5 bg-light" style="border: 2px solid gray; border-radius: 20px;">
+
+        <div *ngIf="premiumLoading">
+            <h2 class="text-center m-2 p-2" style="background-color: rgb(226, 226, 226); border-radius: 10px;"><span
+                    style="color:gold;" class="fw-bold">Premium</span> Rooms</h2>
+            <hr class="bg-black " style="height: 3px;">
+            <div class="row mt-3  myrow">
+
+
+                <owl-carousel-o [options]="customOptions">
+                    <ng-template carouselSlide *ngFor="let pre of premium">
+                        <div class="card mycard ml-2 mr-2 mb-3"
+                            style="width: 14rem;border-radius: 10%; background-color: rgb(226, 226, 226);">
+                            <!-- *ngFor="let room of normal" -->
+                            <div class="text-center">
+
+                                <div *ngIf="pre.image[0]">
+                                    <img class="card-img-top image-fluid mt-2 ml-3"
+                                        style="height:13rem; width: 12rem; border-radius: 10px;"
+                                        src="{{imageUrl}}{{pre.image[0]}}" alt="Card image cap">
+
+                                </div>
+                                <div *ngIf="!pre.image[0]">
+                                    <img class="card-img-top image-fluid mt-2 ml-3"
+                                        style="height:13rem; width: 12rem; border-radius: 10px;"
+                                        src="./../../../../assets/img/112815904-no-image-available-icon-flat-vector-illustration.webp"
+                                        alt="Card image cap">
+
+                                </div>
+                                <div class="card-body">
+                                    <div class="col-lg-12 justify-content-inline">
+
+                                        <p class="card-title">Adderss : {{pre.address}}</p>
+                                        <p class="card-title"> NRP:{{pre.price}}</p>
+
+                                    </div>
+                                    <!-- <p class="card-text ">{{rooms[0].description}}</p> -->
+                                    <div>
+                                        <button class="btn btn-sm btn-primary mr-2" style="border-radius: 10px;"
+                                            (click)="addTocart(pre)">Add to
+                                            Cart</button>
+                                        <button class="btn btn-sm btn-info" style="border-radius: 10px;"
+                                            (click)="onAdd()">Book</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </ng-template>
+
+                </owl-carousel-o>
+
+                <!-- ******************** -->
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class=" mt-5 mb-5 bg-light  " *ngIf="normalLoading" style="border: 2px solid gray; border-radius: 20px;">
+
+        <div>
+            <h2 class="text-center m-2 p-2" style="background-color: rgb(226, 226, 226); border-radius: 10px;"><span
+                    style="color: blue;" class="fw-bold">Normal</span> Rooms</h2>
+            <hr class="bg-black " style="height: 3px;">
+            <div class="row mt-3  myrow">
+                <owl-carousel-o [options]="customOptions">
+                    <ng-template carouselSlide *ngFor="let nom of normal">
+                        <div class="card mycard ml-2 mr-2 mb-3"
+                            style="width: 14rem;border-radius: 10%; background-color: rgb(226, 226, 226);">
+                            <!-- *ngFor="let room of normal" -->
+                            <div class="text-center">
+
+                                <div *ngIf="nom.image[0]">
+                                    <img class="card-img-top image-fluid mt-2 ml-3"
+                                        style="height:13rem; width: 12rem; border-radius: 10px;"
+                                        src="{{imageUrl}}{{nom.image[0]}}" alt="Card image cap">
+
+                                </div>
+                                <div *ngIf="!nom.image[0]">
+                                    <img class="card-img-top image-fluid mt-2 ml-3"
+                                        style="height:13rem; width: 12rem; border-radius: 10px;"
+                                        src="./../../../../assets/img/112815904-no-image-available-icon-flat-vector-illustration.webp"
+                                        alt="Card image cap">
+
+                                </div>
+                                <div class="card-body">
+                                    <div class="col-lg-12 justify-content-inline">
+
+                                        <p class="card-title">Adderss : {{nom.address}}</p>
+                                        <p class="card-title"> NRP:{{nom.price}}</p>
+
+                                    </div>
+                                    <!-- <p class="card-text ">{{rooms[0].description}}</p> -->
+                                    <div style="border-radius: 10%;">
+                                        <button class="btn btn-sm btn-primary mr-2" style="border-radius: 10px;"
+                                            (click)="addTocart(nom)">Add to
+                                            Cart</button>
+                                        <button class="btn btn-sm btn-info" style="border-radius: 10px;"
+                                            (click)="onAdd()">Book</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+
+                </owl-carousel-o>
+                <!-- ******************** -->
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div id="mybutton">
+
+    <button type="button" class="btn btn-primary feedback   " style="border-radius: 50%; width: 75px; height: 75px;"
+        routerLink='/main/cart'>
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            {{cartNumber}}
+            <span class="visually-hidden">unread messages</span>
+        </span>
+    </button>
+
+</div>

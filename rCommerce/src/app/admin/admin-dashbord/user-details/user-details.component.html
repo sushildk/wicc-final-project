@@ -1,0 +1,54 @@
+<div class="container-fluid  mt-1 " *ngIf="loading">
+    <div class="row">
+        <div class="col-lg-5 text-center mr-5 " style="background-color:rgb(214, 214, 211); border-radius: 10px;">
+
+
+
+            <img class="img-fluid mt-3" style="width: 200px;height: 200px; border-radius: 50%;"
+                src="./../../../../assets/img/tree-736885__480.jpg" alt="">
+
+            <h3 class="content text-center m-3">{{user.firstName}} {{user.lastName}}</h3>
+            <button class="btn btn-warning btn-sm mr-2 mb-3" routerLink="/user/userDasboard/editUser/{{user._id}}"><i
+                    class="fas fa-edit"></i></button>
+            <button class="btn btn-danger btn-sm mb-3" (click)="deleteUser(user._id,user.i)"><i
+                    class="fa-solid fa-trash-can"></i></button>
+
+
+
+        </div>
+
+        <div class=" col-lg-6 mt-1" style="background-color: rgb(214, 214, 211); border-radius: 10px;">
+
+
+            <table class="table" style="font-size: large;">
+
+                <tbody>
+                    <tr>
+                        <td>Email</td>
+                        <td>{{user.Email}}</td>
+                    </tr>
+                    <tr>
+                        <td>Location</td>
+                        <td>{{user.address}}</td>
+                    </tr>
+                    <tr>
+                        <td>Phone Number</td>
+                        <td>{{user.phoneNumber}}</td>
+                    </tr>
+                    <tr>
+                        <td>gender</td>
+                        <td>{{user.gender}}</td>
+                    </tr>
+                    <tr>
+                        <td>role</td>
+                        <td>{{user.role}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+
+    </div>
+</div>

@@ -1,0 +1,26 @@
+.mycard:hover {
+    transform: translateY(-10px);
+    /* border: 2px solid darkblue; */
+}
+
+.myrow {
+    overflow: hidden;
+}
+
+.feedback {
+    border-radius: 50%;
+    background-color: #01a0e4;
+    color: white;
+    padding: 10px 20px;
+    border-color: #ffffff;
+}
+
+.feedback:hover {
+    background-color: darkblue;
+}
+
+#mybutton {
+    position: fixed;
+    bottom: 70px;
+    right: 30px;
+}

@@ -1,0 +1,562 @@
+<div class="container">
+
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../../../../assets/img/room4.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Get A Best Room For Living</h5>
+                    <p>Enjoy every movement of you life !!! </p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../../../../assets/img/room3.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Get A Best Room For Living</h5>
+                    <p>Enjoy every movement of you life !!! </p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../../../../assets/img/room1.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Get A Best Room For Living</h5>
+                    <p>Enjoy every movement of you life !!! </p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+
+
+
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+    <!-- carousel -->
+
+
+    <!-- carousel -->
+
+    <!-- static -->
+
+    <div class=" mt-5 mb-5 bg-light " style="border: 2px solid gray; border-radius: 20px;">
+
+        <div>
+            <h2 class="text-center m-2 p-2 " style="background-color:rgb(226, 226, 226) ; border-radius: 10px;"><span
+                    class="text-danger fw-bold">
+                    Urgent</span> Rooms</h2>
+            <hr class="bg-white " style="height: 3px;">
+            <div class="row mt-3  myrow">
+                <owl-carousel-o [options]="customOptions">
+                    <ng-template carouselSlide>
+                        <div class="card mycard ml-2 mr-2 mb-3"
+                            style="width: 14rem;border-radius: 10%; background-color: rgb(226, 226, 226);">
+                            <!-- *ngFor="let room of normal" -->
+                            <div class="text-center">
+
+                                <div>
+                                    <img class="card-img-top image-fluid mt-2 ml-3"
+                                        style="height:13rem; width: 12rem; border-radius: 10px;"
+                                        src="./../../../../assets/img/room image/1614940194249_download (7).jpeg"
+                                        alt="Card image cap">
+
+                                </div>
+
+
+                                <div class="card-body">
+                                    <div class="col-lg-12 justify-content-inline">
+
+                                        <p class="card-title">Adderss : Tikathali</p>
+                                        <p class="card-title"> NRP:4000</p>
+
+                                    </div>
+                                    <!-- <p class="card-text ">{{rooms[0].description}}</p> -->
+                                    <div style="border-radius: 10%;">
+                                        <button class="btn btn-sm btn-primary mr-2" style="border-radius: 10px;"
+                                            (click)="addTocart(urgent)">Add to
+                                            Cart</button>
+                                        <button class="btn btn-sm btn-info" style="border-radius: 10px;"
+                                            (click)="booking()">Book</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="card mycard ml-2 mr-2 mb-3"
+                            style="width: 14rem;border-radius: 10%; background-color: rgb(226, 226, 226);">
+                            <!-- *ngFor="let room of normal" -->
+                            <div class="text-center">
+
+                                <div>
+                                    <img class="card-img-top image-fluid mt-2 ml-3"
+                                        style="height:13rem; width: 12rem; border-radius: 10px;"
+                                        src="./../../../../assets/img/room image/1614940225336_images (1).jpeg"
+                                        alt="Card image cap">
+
+                                </div>
+
+
+                                <div class="card-body">
+                                    <div class="col-lg-12 justify-content-inline">
+
+                                        <p class="card-title">Adderss : mahalaxmi</p>
+                                        <p class="card-title"> NRP:900</p>
+
+                                    </div>
+                                    <!-- <p class="card-text ">{{rooms[0].description}}</p> -->
+                                    <div style="border-radius: 10%;">
+                                        <button class="btn btn-sm btn-primary mr-2" style="border-radius: 10px;"
+                                            (click)="addTocart(urgent)">Add to
+                                            Cart</button>
+                                        <button class="btn btn-sm btn-info" style="border-radius: 10px;"
+                                            (click)="booking()">Book</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="card mycard ml-2 mr-2 mb-3"
+                            style="width: 14rem;border-radius: 10%; background-color: rgb(226, 226, 226);">
+                            <!-- *ngFor="let room of normal" -->
+                            <div class="text-center">
+
+                                <div>
+                                    <img class="card-img-top image-fluid mt-2 ml-3"
+                                        style="height:13rem; width: 12rem; border-radius: 10px;"
+                                        src="./../../../../assets/img/room image/1614940225336_images.jpeg"
+                                        alt="Card image cap">
+
+                                </div>
+
+
+                                <div class="card-body">
+                                    <div class="col-lg-12 justify-content-inline">
+
+                                        <p class="card-title">Adderss : janakpur</p>
+                                        <p class="card-title"> NRP:1000</p>
+
+                                    </div>
+                                    <!-- <p class="card-text ">{{rooms[0].description}}</p> -->
+                                    <div style="border-radius: 10%;">
+                                        <button class="btn btn-sm btn-primary mr-2" style="border-radius: 10px;"
+                                            (click)="addTocart(urgent)">Add to
+                                            Cart</button>
+                                        <button class="btn btn-sm btn-info" style="border-radius: 10px;"
+                                            (click)="booking()">Book</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="card mycard ml-2 mr-2 mb-3"
+                            style="width: 14rem;border-radius: 10%; background-color: rgb(226, 226, 226);">
+                            <!-- *ngFor="let room of normal" -->
+                            <div class="text-center">
+
+                                <div>
+                                    <img class="card-img-top image-fluid mt-2 ml-3"
+                                        style="height:13rem; width: 12rem; border-radius: 10px;"
+                                        src="./../../../../assets/img/room image/1614940283663_images (2).jpeg"
+                                        alt="Card image cap">
+
+                                </div>
+
+
+                                <div class="card-body">
+                                    <div class="col-lg-12 justify-content-inline">
+
+                                        <p class="card-title">Adderss : ramnagar</p>
+                                        <p class="card-title"> NRP:3000</p>
+
+                                    </div>
+                                    <!-- <p class="card-text ">{{rooms[0].description}}</p> -->
+                                    <div style="border-radius: 10%;">
+                                        <button class="btn btn-sm btn-primary mr-2" style="border-radius: 10px;"
+                                            (click)="addTocart(urgent)">Add to
+                                            Cart</button>
+                                        <button class="btn btn-sm btn-info" style="border-radius: 10px;"
+                                            (click)="booking()">Book</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+
+
+                </owl-carousel-o>
+
+                <!-- ******************** -->
+
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class=" mt-5 mb-5 bg-light " style="border: 2px solid gray; border-radius: 20px;">
+
+        <div>
+            <h2 class="text-center m-2 p-2 "
+                style="background-color:rgb(226, 226, 226) ; border-radius: 10px; color: gold;"><span class=" fw-bold">
+                    Premium</span> Rooms</h2>
+            <hr class="bg-white " style="height: 3px;">
+            <div class="row mt-3  myrow">
+                <owl-carousel-o [options]="customOptions">
+                    <ng-template carouselSlide>
+                        <div class="card mycard ml-2 mr-2 mb-3"
+                            style="width: 14rem;border-radius: 10%; background-color: rgb(226, 226, 226);">
+                            <!-- *ngFor="let room of normal" -->
+                            <div class="text-center">
+
+                                <div>
+                                    <img class="card-img-top image-fluid mt-2 ml-3"
+                                        style="height:13rem; width: 12rem; border-radius: 10px;"
+                                        src="./../../../../assets/img/room image/1614940355815_images (6).jpeg"
+                                        alt="Card image cap">
+
+                                </div>
+
+
+                                <div class="card-body">
+                                    <div class="col-lg-12 justify-content-inline">
+
+                                        <p class="card-title">Adderss : Tikathali</p>
+                                        <p class="card-title"> NRP:4000</p>
+
+                                    </div>
+                                    <!-- <p class="card-text ">{{rooms[0].description}}</p> -->
+                                    <div style="border-radius: 10%;">
+                                        <button class="btn btn-sm btn-primary mr-2" style="border-radius: 10px;"
+                                            (click)="addTocart(urgent)">Add to
+                                            Cart</button>
+                                        <button class="btn btn-sm btn-info" style="border-radius: 10px;"
+                                            (click)="booking()">Book</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="card mycard ml-2 mr-2 mb-3"
+                            style="width: 14rem;border-radius: 10%; background-color: rgb(226, 226, 226);">
+                            <!-- *ngFor="let room of normal" -->
+                            <div class="text-center">
+
+                                <div>
+                                    <img class="card-img-top image-fluid mt-2 ml-3"
+                                        style="height:13rem; width: 12rem; border-radius: 10px;"
+                                        src="./../../../../assets/img/room image/1614940355816_images (7).jpeg"
+                                        alt="Card image cap">
+
+                                </div>
+
+
+                                <div class="card-body">
+                                    <div class="col-lg-12 justify-content-inline">
+
+                                        <p class="card-title">Adderss : mahalaxmi</p>
+                                        <p class="card-title"> NRP:900</p>
+
+                                    </div>
+                                    <!-- <p class="card-text ">{{rooms[0].description}}</p> -->
+                                    <div style="border-radius: 10%;">
+                                        <button class="btn btn-sm btn-primary mr-2" style="border-radius: 10px;"
+                                            (click)="addTocart(urgent)">Add to
+                                            Cart</button>
+                                        <button class="btn btn-sm btn-info" style="border-radius: 10px;"
+                                            (click)="booking()">Book</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="card mycard ml-2 mr-2 mb-3"
+                            style="width: 14rem;border-radius: 10%; background-color: rgb(226, 226, 226);">
+                            <!-- *ngFor="let room of normal" -->
+                            <div class="text-center">
+
+                                <div>
+                                    <img class="card-img-top image-fluid mt-2 ml-3"
+                                        style="height:13rem; width: 12rem; border-radius: 10px;"
+                                        src="./../../../../assets/img/room image/1614940355816_images (8).jpeg"
+                                        alt="Card image cap">
+
+                                </div>
+
+
+                                <div class="card-body">
+                                    <div class="col-lg-12 justify-content-inline">
+
+                                        <p class="card-title">Adderss : janakpur</p>
+                                        <p class="card-title"> NRP:1000</p>
+
+                                    </div>
+                                    <!-- <p class="card-text ">{{rooms[0].description}}</p> -->
+                                    <div style="border-radius: 10%;">
+                                        <button class="btn btn-sm btn-primary mr-2" style="border-radius: 10px;"
+                                            (click)="addTocart(urgent)">Add to
+                                            Cart</button>
+                                        <button class="btn btn-sm btn-info" style="border-radius: 10px;"
+                                            (click)="booking()">Book</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="card mycard ml-2 mr-2 mb-3"
+                            style="width: 14rem;border-radius: 10%; background-color: rgb(226, 226, 226);">
+                            <!-- *ngFor="let room of normal" -->
+                            <div class="text-center">
+
+                                <div>
+                                    <img class="card-img-top image-fluid mt-2 ml-3"
+                                        style="height:13rem; width: 12rem; border-radius: 10px;"
+                                        src="./../../../../assets/img/room image/1614940388480_images (8).jpeg"
+                                        alt="Card image cap">
+
+                                </div>
+
+
+                                <div class="card-body">
+                                    <div class="col-lg-12 justify-content-inline">
+
+                                        <p class="card-title">Adderss : ramnagar</p>
+                                        <p class="card-title"> NRP:3000</p>
+
+                                    </div>
+                                    <!-- <p class="card-text ">{{rooms[0].description}}</p> -->
+                                    <div style="border-radius: 10%;">
+                                        <button class="btn btn-sm btn-primary mr-2" style="border-radius: 10px;"
+                                            (click)="addTocart(urgent)">Add to
+                                            Cart</button>
+                                        <button class="btn btn-sm btn-info" style="border-radius: 10px;"
+                                            (click)="booking()">Book</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+
+
+                </owl-carousel-o>
+
+                <!-- ******************** -->
+
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class=" mt-5 mb-5 bg-light " style="border: 2px solid gray; border-radius: 20px;">
+
+        <div>
+            <h2 class="text-center m-2 p-2 " style="background-color:rgb(226, 226, 226) ; border-radius: 10px;"><span
+                    class="text-primary fw-bold">
+                    Normal</span> Rooms</h2>
+            <hr class="bg-white " style="height: 3px;">
+            <div class="row mt-3  myrow">
+                <owl-carousel-o [options]="customOptions">
+                    <ng-template carouselSlide>
+                        <div class="card mycard ml-2 mr-2 mb-3"
+                            style="width: 14rem;border-radius: 10%; background-color: rgb(226, 226, 226);">
+                            <!-- *ngFor="let room of normal" -->
+                            <div class="text-center">
+
+                                <div>
+                                    <img class="card-img-top image-fluid mt-2 ml-3"
+                                        style="height:13rem; width: 12rem; border-radius: 10px;"
+                                        src="./../../../../assets/img/room image/1614940328725_images (6).jpeg"
+                                        alt="Card image cap">
+
+                                </div>
+
+
+                                <div class="card-body">
+                                    <div class="col-lg-12 justify-content-inline">
+
+                                        <p class="card-title">Adderss : Tikathali</p>
+                                        <p class="card-title"> NRP:4000</p>
+
+                                    </div>
+                                    <!-- <p class="card-text ">{{rooms[0].description}}</p> -->
+                                    <div style="border-radius: 10%;">
+                                        <button class="btn btn-sm btn-primary mr-2" style="border-radius: 10px;"
+                                            (click)="addTocart(urgent)">Add to
+                                            Cart</button>
+                                        <button class="btn btn-sm btn-info" style="border-radius: 10px;"
+                                            (click)="booking()">Book</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="card mycard ml-2 mr-2 mb-3"
+                            style="width: 14rem;border-radius: 10%; background-color: rgb(226, 226, 226);">
+                            <!-- *ngFor="let room of normal" -->
+                            <div class="text-center">
+
+                                <div>
+                                    <img class="card-img-top image-fluid mt-2 ml-3"
+                                        style="height:13rem; width: 12rem; border-radius: 10px;"
+                                        src="./../../../../assets/img/room image/1614940328724_images (5).jpeg"
+                                        alt="Card image cap">
+
+                                </div>
+
+
+                                <div class="card-body">
+                                    <div class="col-lg-12 justify-content-inline">
+
+                                        <p class="card-title">Adderss : mahalaxmi</p>
+                                        <p class="card-title"> NRP:900</p>
+
+                                    </div>
+                                    <!-- <p class="card-text ">{{rooms[0].description}}</p> -->
+                                    <div style="border-radius: 10%;">
+                                        <button class="btn btn-sm btn-primary mr-2" style="border-radius: 10px;"
+                                            (click)="addTocart(urgent)">Add to
+                                            Cart</button>
+                                        <button class="btn btn-sm btn-info" style="border-radius: 10px;"
+                                            (click)="booking()">Book</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="card mycard ml-2 mr-2 mb-3"
+                            style="width: 14rem;border-radius: 10%; background-color: rgb(226, 226, 226);">
+                            <!-- *ngFor="let room of normal" -->
+                            <div class="text-center">
+
+                                <div>
+                                    <img class="card-img-top image-fluid mt-2 ml-3"
+                                        style="height:13rem; width: 12rem; border-radius: 10px;"
+                                        src="./../../../../assets/img/room image/1614940283665_images (4).jpeg"
+                                        alt="Card image cap">
+
+                                </div>
+
+
+                                <div class="card-body">
+                                    <div class="col-lg-12 justify-content-inline">
+
+                                        <p class="card-title">Adderss : janakpur</p>
+                                        <p class="card-title"> NRP:1000</p>
+
+                                    </div>
+                                    <!-- <p class="card-text ">{{rooms[0].description}}</p> -->
+                                    <div style="border-radius: 10%;">
+                                        <button class="btn btn-sm btn-primary mr-2" style="border-radius: 10px;"
+                                            (click)="addTocart(urgent)">Add to
+                                            Cart</button>
+                                        <button class="btn btn-sm btn-info" style="border-radius: 10px;"
+                                            (click)="booking()">Book</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="card mycard ml-2 mr-2 mb-3"
+                            style="width: 14rem;border-radius: 10%; background-color: rgb(226, 226, 226);">
+                            <!-- *ngFor="let room of normal" -->
+                            <div class="text-center">
+
+                                <div>
+                                    <img class="card-img-top image-fluid mt-2 ml-3"
+                                        style="height:13rem; width: 12rem; border-radius: 10px;"
+                                        src="./../../../../assets/img/room image/1614940283664_images (3).jpeg"
+                                        alt="Card image cap">
+
+                                </div>
+
+
+                                <div class="card-body">
+                                    <div class="col-lg-12 justify-content-inline">
+
+                                        <p class="card-title">Adderss : ramnagar</p>
+                                        <p class="card-title"> NRP:3000</p>
+
+                                    </div>
+                                    <!-- <p class="card-text ">{{rooms[0].description}}</p> -->
+                                    <div style="border-radius: 10%;">
+                                        <button class="btn btn-sm btn-primary mr-2" style="border-radius: 10px;"
+                                            (click)="addTocart(urgent)">Add to
+                                            Cart</button>
+                                        <button class="btn btn-sm btn-info" style="border-radius: 10px;"
+                                            (click)="booking()">Book</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+
+
+                </owl-carousel-o>
+
+                <!-- ******************** -->
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- static -->
+
+
+
+
+
+
+    <div id="mybutton" routerLink="/auth/register">
+
+        <button type="button" class="btn btn-primary feedback   "
+            style="border-radius: 50%; width: 75px; height: 75px;">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                {{cartNumber}}
+                <span class="visually-hidden">unread messages</span>
+            </span>
+        </button>
+
+    </div>
